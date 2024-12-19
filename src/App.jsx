@@ -8,16 +8,11 @@ function App() {
 
   return (
     <div className={styles.appWrapper}>
-      <div className={styles.buttonWrapper}>
-        <Button
-          size="large"
-          onClick={() => setIsComponentOpen((prev) => !prev)}
-        >
-          Show GST Breakdown
-        </Button>
+      <Button size="large" onClick={() => setIsComponentOpen((prev) => !prev)}>
+        Show GST Breakdown
+      </Button>
 
-        <GSTBreakdown />
-      </div>
+      <GSTBreakdown />
     </div>
   );
 }
