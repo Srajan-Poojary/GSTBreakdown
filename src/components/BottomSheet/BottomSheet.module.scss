@@ -1,0 +1,44 @@
+@use "../../styles/variables" as var;
+@use "../../styles/mixins" as mix;
+
+.bottomSheet {
+  &__gradient {
+    background: var.$color-black-overlay;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    display: none;
+  }
+
+  &__container {
+    padding: 0 20px;
+    position: fixed;
+    width: 100vw;
+    height: 0vh;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var.$color-white-text;
+    touch-action: none; // to handle touch events smoothly
+    border-radius: 10px 10px 0 0;
+    overflow: auto;
+
+    .bottomSheet__header {
+      @include mix.center-flex();
+      height: 70px;
+
+      .bottomSheet_title {
+        font-size: var.$font-size-md-lg;
+        flex: 20;
+        text-align: center;
+      }
+
+      .bottomSheet__header_close {
+        @include mix.button-style-rest();
+        flex: 1;
+      }
+    }
+  }
+}

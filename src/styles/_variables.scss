@@ -1,0 +1,29 @@
+// Colors
+// Positive/Success indicators
+$color-positive-text: #77aa00; // Green for success
+$color-focus-border: #00bf36; // Focused border color
+$color-positive-container-bg: #e7fff1; // Focused border color
+
+// Negative/Error indicators
+$color-negative-text: #e82217; // Red for errors or warnings
+
+// Neutral/Default colors
+$color-default-text: #000000; // Default black text
+$color-gray-text: #747474; // Grayed-out or secondary text
+$color-white-text: #fff;
+$color-unfocused-border: #cdcdcd; // Border for inactive elements
+$color-container-bg: #fafafa; // Default container background
+$color-container-header-bg: #8e8e8e;
+$color-black-overlay: rgba(0, 0, 0, 0.8);
+
+// Gradients
+$gradient-primary: linear-gradient(90deg, #e6f9ff 15.42%, #f3ffe0 93.19%);
+$gradient-secondary: linear-gradient(90deg, #d8eaff 15.42%, #e9f4ff 93.19%),
+  linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
+
+// Font Sizes
+$font-size-lg: 1.5rem; // Large text
+$font-size-md-lg: 0.9375rem; // Medium-Large text
+$font-size-md: 0.8125rem; // Medium text
+$font-size-sm: 0.6875rem; // Small text
+$font-size-xs: 0.625rem; // Extra small text

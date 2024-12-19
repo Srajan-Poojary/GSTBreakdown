@@ -1,0 +1,195 @@
+@use "../../styles/variables" as var;
+@use "../../styles/mixins" as mix;
+
+.depositBreakdown__amount {
+  font-size: var.$font-size-md;
+  color: var.$color-positive-text;
+  font-weight: 700;
+}
+
+%amount-style {
+  font-size: var.$font-size-md;
+  color: var.$color-positive-text;
+  font-weight: bold;
+}
+
+.depositBreakdown {
+  width: 100%;
+  height: max-content;
+  border-radius: 8px;
+  overflow: hidden;
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: max-content;
+    padding: 10px 20px;
+    font-size: var.$font-size-sm;
+    color: var.$color-default-text;
+    background: var.$gradient-secondary;
+  }
+
+  &__workflow {
+    height: 100%;
+    padding: 20px 0;
+    background: var.$color-container-bg;
+  }
+
+  &__title {
+    font-size: var.$font-size-md-lg;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  &__summary {
+    text-align: center;
+
+    p {
+      font-size: var.$font-size-md;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    h3 {
+      font-size: var.$font-size-lg;
+      margin-bottom: 5px;
+    }
+
+    p:nth-of-type(2) {
+      font-size: var.$font-size-sm;
+      color: var.$color-gray-text;
+      font-weight: 500;
+    }
+  }
+
+  &__breakdown {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding: 0 20px;
+
+    .double_arrow_icon {
+      position: relative;
+      bottom: 20px;
+    }
+
+    .depositBreakdown__wallet {
+      @include mix.center-flex();
+      flex-direction: column;
+      width: 144px;
+      height: 51px;
+      text-align: center;
+      border-radius: 8px;
+      border: 1px solid var.$color-unfocused-border;
+
+      .depositBreakdown__amount {
+        font-size: var.$font-size-md-lg;
+        margin-bottom: 5px;
+      }
+
+      .depositBreakdown__tax {
+        color: var.$color-negative-text;
+        margin-bottom: 5px;
+      }
+
+      p {
+        font-size: var.$font-size-sm;
+      }
+    }
+  }
+
+  &__final {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 30px;
+
+    .depositBreakdown__rummyCircle {
+      min-width: 212px;
+      padding: 10px 15px;
+      border-radius: 5.25px;
+      border: 1.6px solid var.$color-focus-border;
+      background: var.$color-positive-container-bg;
+      position: relative;
+      overflow: hidden;
+
+      .confetti__canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .depositBreakdown__amount {
+        font-size: var.$font-size-md-lg;
+        margin-bottom: 5px;
+      }
+
+      .imageAndDisclaimerContainer {
+        display: flex;
+        align-items: center;
+      }
+
+      img {
+        margin-right: 10px;
+      }
+
+      .depositBreakdown__disclaimer {
+        font-size: var.$font-size-xs;
+      }
+    }
+
+    .depositBreakdown__user {
+      text-align: right;
+
+      p:first-of-type {
+        font-size: var.$font-size-sm;
+      }
+
+      .depositBreakdown__amount {
+        font-size: var.$font-size-lg;
+      }
+
+      p:nth-of-type(2) {
+        font-size: var.$font-size-xs;
+        color: var.$color-gray-text;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .depositBreakdown {
+    &__heading {
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    &__final {
+      flex-direction: column;
+
+      .depositBreakdown__rummyCircle {
+        width: 100%;
+        text-align: center;
+
+        .imageAndDisclaimerContainer {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+
+      .dashed_arrow_right {
+        transform: rotate(90deg);
+        position: relative;
+        top: 10px;
+      }
+
+      .depositBreakdown__user {
+        margin-top: 30px;
+        text-align: center;
+      }
+    }
+  }
+}
