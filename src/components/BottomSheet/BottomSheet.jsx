@@ -12,7 +12,7 @@ const BottomSheet = ({ children, open = false, onClose, title }) => {
     if (open) {
       // Animate the opening of the BottomSheet
       bottomSheetWrapperRef.current.getBoundingClientRect();
-      bottomSheetWrapperRef.current.style.height = "90vh";
+      bottomSheetWrapperRef.current.style.height = "70vh";
       bottomSheetWrapperRef.current.style.transition = "height 0.3s ease-out";
       gradientRef.current.style.display = "block";
 
